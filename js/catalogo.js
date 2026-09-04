@@ -58,32 +58,6 @@ function mostrarProductos(lista) {
             "producto-card";
 
 
-        // ESTADO
-
-        const estado = producto.disponible
-
-            ? `
-                <span class="producto-estado estado-disponible">
-                    Disponible
-                </span>
-              `
-
-            : `
-                <span class="producto-estado estado-agotado">
-                    Agotado
-                </span>
-              `;
-
-
-        // PRECIO
-
-        const precio = producto.precio > 0
-
-            ? `$${producto.precio.toFixed(2)}`
-
-            : "Consultar";
-
-
         // BOTÓN
 
         const boton = producto.disponible
@@ -119,8 +93,6 @@ function mostrarProductos(lista) {
                     class="producto-imagen"
                 >
 
-                ${estado}
-
             </div>
 
 
@@ -149,7 +121,7 @@ function mostrarProductos(lista) {
                 <div class="producto-footer">
 
                     <span class="producto-precio">
-                        ${precio}
+                        Consultar
                     </span>
 
 
@@ -328,8 +300,7 @@ function agregarAlCarrito(id) {
             presentacion:
                 producto.presentacion,
 
-            precio:
-                producto.precio,
+            precio: 0,
 
             imagen:
                 producto.imagen,
